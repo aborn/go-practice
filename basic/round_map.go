@@ -15,6 +15,10 @@ func abs(value int) int {
 	return value
 }
 
+func Get(key int) int {
+	return roundMap[key]
+}
+
 func Put(key int, value int) {
 	currentIndex := key % RoundMapMaxSize
 	roundMap[currentIndex] = value
@@ -23,7 +27,9 @@ func Put(key int, value int) {
 			delete(roundMap, abs(i-currentIndex))
 		}
 	}
-	fmt.Println("current map size = ", len(roundMap))
+	// if key%10 == 0 {
+	// 	fmt.Println("current map size = ", len(roundMap))
+	//}
 }
 
 func init() {
