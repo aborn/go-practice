@@ -33,6 +33,6 @@ func Put(key int, value int) {
 }
 
 func init() {
-	roundMap = make(map[int]int, 2000)
+	roundMap = make(map[int]int, RoundMapMaxSize)
 	fmt.Println("init map size = ", len(roundMap))
 }
